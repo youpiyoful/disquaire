@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Artist(models.Model):
     name = models.CharField(max_length=200, unique=True)
@@ -22,5 +23,5 @@ class Album(models.Model):
 class Booking(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     contacted = models.BooleanField(default=False)
-    contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
-    album = models.OneToOneField(Album)
+    contact = models.ForeignKey('Contact', on_delete=models.CASCADE)
+    album = models.OneToOneField('Album', on_delete=models.DO_NOTHING)
