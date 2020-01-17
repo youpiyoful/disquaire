@@ -1,6 +1,5 @@
 {% extends 'store/base.html' %}
 
 {% block content %}
-    Salut à tous les amoureux du jazzzzz
-    {% include 'store/list.html' %}
+    {% include 'store/list.html' with list_title='Nos derniers disques' %}
 {% endblock %}
