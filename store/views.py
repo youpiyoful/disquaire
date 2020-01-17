@@ -1,5 +1,5 @@
 # from django.shortcuts import render
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import render, get_object_or_404
 
 from .models import Album, Artist, Contact, Booking
 
@@ -27,7 +27,7 @@ def listing(request):
 
 def detail(request, album_id):
     id = int(album_id)
-    album = get_list_or_404(Album, pk=id)
+    album = get_object_or_404(Album, pk=id)
     artists = [artist.name for artist in album.artists.all()]
     artists_name = " ".join(artists)
     message = "Le nom de l'album est {}. Il a été écrit par {}".format(album.title, artists)
