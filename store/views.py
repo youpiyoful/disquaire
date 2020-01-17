@@ -43,6 +43,7 @@ def detail(request, album_id):
 
 def search(request):
     query = request.GET.get('query')
+    hellfest
     if not query:
         albums = Album.objects.all()
     else:
